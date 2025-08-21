@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emerald Industries — Building What’s Next</title>
+  <meta name="description" content="Emerald Industries is a product foundry and open-source steward crafting developer-first systems and tools." />
+  <meta name="theme-color" content="#0c2a22" />
+  <meta property="og:title" content="Emerald Industries" />
+  <meta property="og:description" content="A product foundry and OSS steward crafting developer-first systems and tools." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/emerald-mark.png" />
+  <meta name="color-scheme" content="dark light" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --emerald-700:#0a7a5a; --emerald-600:#0e9f6e; --emerald-500:#10b981;
+      --mint-200:#a7f3d0; --ink-950:#0b1f1a; --ink-900:#0f2a23;
+      --slate-200:#e2e8f0; --slate-400:#94a3b8;
+      --radius-2xl:1.25rem; --shadow-soft:0 10px 30px rgba(0,0,0,.35);
+      --shadow-ring:0 0 0 1px rgba(255,255,255,.06) inset;
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,'Noto Sans','Apple Color Emoji','Segoe UI Emoji',sans-serif;
+         color:var(--slate-200);
+         background:radial-gradient(1200px 600px at 80% -10%, rgba(16,185,129,.18), transparent 60%),
+                    radial-gradient(900px 500px at -10% 10%, rgba(14,159,110,.12), transparent 60%),
+                    linear-gradient(180deg, var(--ink-950), var(--ink-900));
+         letter-spacing:.01em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+    .container{max-width:1120px;padding:24px;margin-inline:auto}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:8px}
+    .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
+    .brand img{width:42px;height:42px;object-fit:contain;filter:drop-shadow(0 6px 16px rgba(16,185,129,.35))}
+    .brand-title{font-family:Montserrat,Inter,sans-serif;font-weight:800;letter-spacing:.02em;font-size:1.05rem;text-transform:uppercase}
+    .cta{display:inline-flex;align-items:center;gap:.65ch;background:linear-gradient(135deg,#0e9f6e,#10b981);
+         color:#031a14;border:none;padding:10px 14px;border-radius:999px;font-weight:600;cursor:pointer;text-decoration:none;
+         box-shadow:0 6px 18px rgba(16,185,129,.35);transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;white-space:nowrap}
+    .cta:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(16,185,129,.45)}
+    .cta:active{transform:translateY(0);box-shadow:0 4px 14px rgba(16,185,129,.3)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;padding:72px 0 44px}
+    @media (max-width:960px){.hero{grid-template-columns:1fr;gap:28px;padding-top:42px}}
+    .hero-card{background:rgba(3,26,20,.55);backdrop-filter:saturate(1.1) blur(8px);border-radius:var(--radius-2xl);
+               padding:32px;box-shadow:var(--shadow-soft),var(--shadow-ring);position:relative;overflow:hidden}
+    .hero-card::after{content:'';position:absolute;inset:-1px;border-radius:inherit;background:
+               linear-gradient(135deg, rgba(110,231,183,.25), rgba(14,159,110,.12) 40%, transparent 70%);
+               pointer-events:none;mask:linear-gradient(#000, transparent 60%)}
+    .kicker{font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mint-200);margin:0 0 10px}
+    h1{font-family:Montserrat,Inter,sans-serif;font-size:clamp(2rem, 2.5rem + 1.5vw, 3.6rem);line-height:1.08;margin:0 0 14px;letter-spacing:.01em}
+    .lead{font-size:1.05rem;color:var(--slate-400);max-width:58ch;margin:0 0 22px}
+    .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+    .logo-panel{display:flex;align-items:center;justify-content:center;background:rgba(3,26,20,.35);border-radius:var(--radius-2xl);
+                box-shadow:var(--shadow-soft),var(--shadow-ring);padding:28px;min-height:280px}
+    .logo-panel img{width:min(420px, 80%);height:auto;object-fit:contain;filter:drop-shadow(0 14px 28px rgba(16,185,129,.32))}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+    @media (max-width:960px){.features{grid-template-columns:1fr}}
+    .feature{background:rgba(3,26,20,.45);border-radius:18px;padding:18px 18px 16px;box-shadow:var(--shadow-soft),var(--shadow-ring);min-height:140px}
+    .feature h3{font-family:Montserrat,Inter,sans-serif;margin:.2rem 0 .35rem;font-size:1.02rem;letter-spacing:.01em}
+    .feature p{margin:.2rem 0 0;color:var(--slate-400);font-size:.98rem}
+    .section{padding:36px 0 18px}
+    .section h2{font-family:Montserrat,Inter,sans-serif;font-size:1.4rem;letter-spacing:.02em;margin:0 0 14px}
+    .foot{border-top:1px solid rgba(255,255,255,.06);margin-top:36px;padding:18px 0 40px;color:var(--slate-400);
+          font-size:.95rem;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .foot a{color:var(--mint-200);text-decoration:none}.foot a:hover{text-decoration:underline}
+    @media (prefers-reduced-motion: reduce){.cta{transition:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header aria-label="Site header">
+      <a class="brand" href="/" aria-label="Emerald Industries home">
+        <img src="assets/emerald-mark.png" alt="Emerald gemstone logo" />
+        <span class="brand-title">Emerald Industries</span>
+      </a>
+      <a class="cta" href="#contact" aria-label="Get in touch">Get in touch →</a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-card">
+          <p class="kicker">Product Foundry · Open Source Steward</p>
+          <h1 id="hero-title">We craft developer-first systems—fast, elegant, and reliable.</h1>
+          <p class="lead">
+            Emerald Industries is the umbrella behind the Dorothy framework, Foundry OSS tools, and a growing
+            suite of composable products. We build the primitives so your teams can build the future.
+          </p>
+          <div class="btn-row">
+            <a class="cta" href="#platform">Explore the platform</a>
+            <a class="cta" href="#contact" style="background:linear-gradient(135deg,#6ee7b7,#10b981);">Partner with us</a>
+          </div>
+
+          <div class="features" id="platform">
+            <article class="feature" aria-label="Dorothy Framework">
+              <h3>Dorothy Framework</h3>
+              <p>Symbolic routing, shape-driven I/O, Supreme™ architecture. OSS at its finest.</p>
+            </article>
+            <article class="feature" aria-label="Foundry OSS">
+              <h3>Foundry OSS</h3>
+              <p>Release, versioning, and CI tools that favor elegance and reliability over ceremony.</p>
+            </article>
+            <article class="feature" aria-label="Ecosystem">
+              <h3>Ecosystem</h3>
+              <p>From APIs to dashboards—composable building blocks that scale with you.</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="logo-panel" aria-label="Brand mark">
+          <img src="assets/emerald-mark.png" alt="Emerald Industries gemstone wordmark" />
+        </aside>
+      </section>
+
+      <section class="section" aria-labelledby="about-title">
+        <h2 id="about-title">A simple promise</h2>
+        <p class="lead">
+          We reduce complexity without sacrificing power. Opinionated where it matters,
+          flexible where it counts.
+        </p>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact</h2>
+        <p class="lead">Ready to build? Reach out and we’ll get back quickly.</p>
+        <div class="btn-row">
+          <a class="cta" href="mailto:hello@emerald.industries">hello@emerald.industries</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot" role="contentinfo">
+      <span>© <span id="year"></span> Emerald Industries</span>
+      <span>Privacy-respecting by design · OSS at the core</span>
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
