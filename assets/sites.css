@@ -1,0 +1,60 @@
+:root {
+  --emerald-700: #0a7a5a;
+  --emerald-500: #10b981;
+  --mint-200: #a7f3d0;
+  --ink-950: #0b1f1a;
+  --ink-900: #0f2a23;
+  --slate-200: #e2e8f0;
+  --slate-400: #94a3b8;
+  --radius-xl: 1.2rem;
+  --shadow-soft: 0 8px 24px rgba(0,0,0,.35);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--slate-200);
+  background: linear-gradient(180deg, var(--ink-950), var(--ink-900));
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+.site-header {
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 0;
+}
+.brand {display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand img {width:42px;height:42px;filter:drop-shadow(0 6px 16px rgba(16,185,129,.35))}
+.brand-title {font-family:Montserrat, sans-serif;font-weight:800;letter-spacing:.02em;text-transform:uppercase}
+
+.cta {
+  background: linear-gradient(135deg, var(--emerald-700), var(--emerald-500));
+  color:#031a14;padding:10px 16px;border-radius:999px;font-weight:600;text-decoration:none;
+  box-shadow:0 6px 18px rgba(16,185,129,.35);transition:.15s;
+}
+.cta:hover {transform:translateY(-1px);box-shadow:0 10px 26px rgba(16,185,129,.45)}
+.cta.alt {background:linear-gradient(135deg,#6ee7b7,#10b981)}
+
+.hero {display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;padding:64px 0}
+.hero-text .kicker {color:var(--mint-200);text-transform:uppercase;letter-spacing:.15em;font-size:.9rem}
+.hero-text h1 {font-family:Montserrat,sans-serif;font-size:2.8rem;margin:12px 0}
+.hero-text .lead {color:var(--slate-400);line-height:1.5;max-width:58ch}
+.hero-graphic img {max-width:380px;width:100%;filter:drop-shadow(0 14px 28px rgba(16,185,129,.32))}
+
+.section {padding:48px 0}
+.section h2 {font-family:Montserrat,sans-serif;font-size:1.6rem;margin-bottom:16px}
+
+.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card {background:rgba(3,26,20,.45);padding:20px;border-radius:var(--radius-xl);box-shadow:var(--shadow-soft)}
+.card h3 {margin-top:0;font-size:1.1rem}
+.card p {color:var(--slate-400)}
+
+.list {list-style:none;padding:0;margin:0}
+.list li {margin-bottom:10px;color:var(--slate-200)}
+
+.foot {
+  border-top:1px solid rgba(255,255,255,.06);
+  margin-top:48px;padding:20px 0;
+  color:var(--slate-400);display:flex;justify-content:space-between;flex-wrap:wrap;font-size:.95rem;
+}
